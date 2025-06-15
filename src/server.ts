@@ -8,7 +8,7 @@ let server: Server;
 async function main() {
   try {
     await mongoose.connect(
-      "mongodb+srv://mongo_DB:mongoDB14@cluster0.s8hxf.mongodb.net/todosDB?retryWrites=true&w=majority&appName=Cluster0"
+      "mongodb+srv://mongo_DB:mongoDB14@cluster0.s8hxf.mongodb.net/noteDB?retryWrites=true&w=majority&appName=Cluster0"
     );
     console.log("Mongoose is connected successfully");
     server = app.listen(PORT, () => {
