@@ -24,4 +24,4 @@ const noteSchema = new Schema<INotes>(
   }
 );
 
-export const Note = model("Note", noteSchema);
+export const Note = model<INotes>("Note", noteSchema);

@@ -6,15 +6,12 @@ export const notesRoutes = express.Router();
 
 notesRoutes.post("/create-note", async (req: Request, res: Response) => {
   const body = req.body;
-  console.log(body);
-
   const note = await Note.create(body);
 
   res.status(201).json({
     success: true,
     message: "Note created successfully",
     note: note,
-    body: body,
   });
 });
 

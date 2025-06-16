@@ -11,7 +11,6 @@ usersRoutes.post("/create-user", async (req: Request, res: Response) => {
     success: true,
     message: "New User created successfully",
     note: user,
-    body: newUser,
   });
 });
 usersRoutes.get("/", async (req: Request, res: Response) => {
