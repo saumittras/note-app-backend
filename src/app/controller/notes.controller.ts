@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
 import { Note } from "../model/notes.model";
@@ -7,6 +8,8 @@ export const notesRoutes = express.Router();
 notesRoutes.post("/create-note", async (req: Request, res: Response) => {
   const body = req.body;
   const note = await Note.create(body);
+
+  const password = await bcrypt.hash(body.password, 10);
 
   res.status(201).json({
     success: true,
