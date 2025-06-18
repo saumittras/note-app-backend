@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-const noteSchema = new Schema<INotes>(
+const noteSchema = new Schema<any>(
   {
     title: { type: String, required: true, trim: true },
     content: { type: String, defaultg: "" },
@@ -17,6 +17,11 @@ const noteSchema = new Schema<INotes>(
       label: { type: String, required: true },
       color: { type: String, default: "gray" },
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
     timestamps: true,
@@ -24,4 +29,4 @@ const noteSchema = new Schema<INotes>(
   }
 );
 
-export const Note = model<INotes>("Note", noteSchema);
+export const Note = model<any>("Note", noteSchema);
